@@ -1,5 +1,6 @@
 import React, { useState, Fragment } from 'react';
 import Form from './components/Form'
+import Song from './components/Song'
 import axios from 'axios';
 
 function App() {
@@ -19,6 +20,17 @@ function App() {
       <Form
           queryAPILyrics={queryAPILyrics}
         />
+      <div className="container mt-5">
+        <div className="row">
+          <div className="col-md-6" >
+          </div>
+          <div className="col-md-6" >
+            <Song
+                lyrics={lyrics}
+              />
+          </div>
+        </div>
+      </div>
     </Fragment>
   );
 }
