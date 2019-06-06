@@ -1,5 +1,6 @@
 import React, { useState, Fragment } from 'react';
 import Form from './components/Form'
+import axios from 'axios';
 
 function App() {
 
@@ -7,8 +8,10 @@ function App() {
   const [lyrics, setLyrics] = useState([])
   const [info, setInfo] = useState({})
 
-  const queryAPILyrics = search => {
-    console.log(search)
+  const queryAPILyrics = async search => {
+    const url = `https://api.lyrics.ovh/v1/${search.artist}/${search.song}`
+    const result = await axios(url);
+    setLyrics(result.data.lyrics);
   }
 
   return (
