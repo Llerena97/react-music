@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useState, Fragment } from 'react';
+import Form from './components/Form'
 
 function App() {
+
+  const [artist, setArtist] = useState('')
+  const [lyrics, setLyrics] = useState([])
+  const [info, setInfo] = useState({})
+
   return (
-    <div className="App">
-      <h1>Welcome to React!</h1>
-    </div>
+    <Fragment>
+      <Form/>
+    </Fragment>
   );
 }
 
